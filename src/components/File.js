@@ -30,7 +30,7 @@ function File() {
         nextFiles = nextFiles?.files?.[nextFiles?.files?.findIndex?.(itm => itm.name === curPath)]
       }
     })
-    nextFiles.isOpen = !nextFiles.isOpen
+    nextFiles.isOpen = false
     nextFiles.files = []
     setFiles(newFilesList)
   }

@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 
-function FileData({onExpand, name, isExpandable, isOpen, makeDir, files}) {
+function FileData({onExpand, name, isExpandable, isOpen, makeDir}) {
     return (
       <>
         <li>
         <button
           onClick={onExpand}
-          onDoubleClick={makeDir}
+          onDoubleClick={!isExpandable ? makeDir : () => {} }
         >
           {name}
           {isExpandable && <span>{isOpen ? '[-]' : '[+]'}</span>}
